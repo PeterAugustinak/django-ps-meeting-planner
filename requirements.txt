@@ -1,0 +1,7 @@
+antiorm==1.2.1
+asgiref==3.5.2
+db==0.1.1
+db-sqlite3==0.0.1
+Django==4.1.1
+pkg_resources==0.0.0
+sqlparse==0.4.2
