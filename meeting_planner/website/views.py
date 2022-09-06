@@ -3,9 +3,17 @@ from django.http import HttpResponse
 
 from datetime import datetime
 
+from meetings.models import Meeting
+
 # Create your views here.
 def welcome(request):
-    return HttpResponse("Welcome to the Meeting Planner app!")
+    num_of_meetings = Meeting.objects.count()
+
+    return render(
+        request,
+        'website/welcome.html',
+        {"num_of_meetings": num_of_meetings}
+    )
 
 
 def date(request):
