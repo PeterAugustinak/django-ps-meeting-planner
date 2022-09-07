@@ -5,14 +5,18 @@ from datetime import datetime
 
 from meetings.models import Meeting
 
-# Create your views here.
+
 def welcome(request):
     num_of_meetings = Meeting.objects.count()
+    lst_of_meetings = Meeting.objects.all()
 
     return render(
         request,
         'website/welcome.html',
-        {"num_of_meetings": num_of_meetings}
+        {
+            "num_of_meetings": num_of_meetings,
+            "meetings": lst_of_meetings,
+         }
     )
 
 

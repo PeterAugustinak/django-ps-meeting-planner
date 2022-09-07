@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+</head>
+<body>
+    <h1>Rooms list</h1>
+    <p>
+        There are currently {{ num_of_rooms }} room(s) available.
+    </p>
+
+    <ul>
+        {% for room in rooms %}
+            <li>
+                {{ room.name }} (floor{{ room.floor }})
+            </li>
+        {%  endfor %}
+    </ul>
+        <p>
+            <a href="{% url 'welcome' %}">Back to home page ...</a>
+        </p>
+</body>
+</html>

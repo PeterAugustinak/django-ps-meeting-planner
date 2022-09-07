@@ -12,5 +12,19 @@
     <p>
         There are currently {{ num_of_meetings }} meeting(s) set in the calendar.
     </p>
+
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <!-- <a href="/meetings/{{ meeting.id }}">{{ meeting.title }}</a> -->
+                <a href="{% url 'meeting_detail' meeting.id %}">{{ meeting.title }}</a>
+            </li>
+        {%  endfor %}
+    </ul>
+    <p>
+        To check available rooms,
+        <a href="{%  url 'rooms' %}">Click here</a>
+    </p>
 </body>
 </html>
