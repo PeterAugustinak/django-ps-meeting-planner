@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 from website.views import welcome, date, about
-from meetings.views import meeting_detail, rooms
 
 urlpatterns = [
     path('admin/', admin.site.urls),

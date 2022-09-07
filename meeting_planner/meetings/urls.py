@@ -1,11 +1,11 @@
 """Url mappings for meetings app"""
 
-from django.contrib import admin
 from django.urls import path
 
-from meetings.views import meeting_detail, rooms
+from . import views
 
 urlpatterns = [
-    path('<int:id>', meeting_detail, name="meeting_detail"),
-    path('rooms', rooms, name="rooms"),
+    path('<int:id>', views.meeting_detail, name="meeting_detail"),
+    path('rooms', views.rooms, name="rooms"),
+    path('new', views.new_meeting, name="new")
 ]
