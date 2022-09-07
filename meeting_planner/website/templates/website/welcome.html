@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome!</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome!{% endblock %}
+{% block content %}
     <h1>Welcome to the Meeting Planner!</h1>
     <p>
         This is the demo application for the Django course.
@@ -12,6 +10,8 @@
     <p>
         There are currently {{ num_of_meetings }} meeting(s) set in the calendar.
     </p>
+
+    <img src="{% static 'website/calendar_icon.png' %}" width="200">
 
     <h2>Meetings</h2>
     <ul>
@@ -26,5 +26,4 @@
         To check available rooms,
         <a href="{%  url 'rooms' %}">Click here</a>
     </p>
-</body>
-</html>
+{% endblock %}
